@@ -1,0 +1,24 @@
+1.创建数据库 create
+2.显示数据库 show 
+3.使用数据库 use
+
+4.创建视图   create 
+5.显示视图   show
+
+6.创建数据表 create
+7.显示数据表 show
+8.显示数据表属性信息 help
+9.向数据表中插入数据 insert
+10.更新数据表中数据  update
+11.删除数据表中数据  delete
+12.查询数据表中数据（单表查询） select
+
+13.revoke/grante
+14.权限设置
+
+15.help table;
+16.help view;
+17.help database;
+
+
+

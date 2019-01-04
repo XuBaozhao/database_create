@@ -1,0 +1,134 @@
+说明：
+1.输入1进入管理员状态，输入H申请管理员账户
+  输入管理员账号和密码即可登录，拥有所有权限
+  输入2则进入游客状态，执行增删改时会提示您不具备该权限
+
+可执行代码如下：
+
+//嵌套查询（两个表in、=><）
+select * from Stu where Sno in(select Cno from Course where Cgrade=90);
+
+select * from Stu where Sno in(select Cno from Course where Cgrade>90);
+
+select * from Stu where Sno in(select Cno from Course where Cgrade<90);
+
+select * from Stu where Sno in(select Cn from Course where Cgrade<90);
+
+//单表查询（元组、属性列、in、and、or、between and）
+select * from Stu;
+select Sno from Stu;
+select Sno from Stu where Sage=12;
+
+select * from Stu where Sage between 10 and 12;
+select Sno from Stu where Sage between 10 and 12;
+select Sno from Stu where Sage between 50 and 60;
+select Sno from Stu where age between 10 and 12;
+
+select Sno from Stu where Sage=11 and Sname=xiaohua;
+select * from Stu where Sage=11 and Sname=xiaohua;
+select * from Stu where age=11 and Sname=xiaohua;
+
+select * from Stu where Sage in(11,12,13);
+select * from Stu where Sage in(11,12);
+select * from Stu where Sage in(11,12,13,14);
+select * from Stu where Sname in(ccc,hhh);
+select * from Stu where name in(ccc,hhh);
+
+select Sno from Stu where Sage=12 or Sname=xiaohua;
+select * from Stu where Sage=12 or Sname=xiaohua;
+
+//创建数据库，显示数据库，删除数据库
+create database db;
+create database dbdb;
+show databases
+show databases;
+drop database dbdb;
+show databases;
+
+//选择数据库
+use db;
+
+//创建表
+create aaa;
+create table Course(Cno int,Cname varchar(20),Cgrade int)values(1501060801,Database,100);
+
+create table Stu(Sno int not_null primary_key,Sname varchar(20),Ssex char,Sage int)values(1501060831,aaa,m,10);
+
+//显示表
+show table;
+show tables;
+
+//显示表属性信息
+select * from Stu;
+select * from Course;
+help table Stu;
+help table Course;
+
+//插入数据 null
+insert values(null,ttt,m,5);
+insert into Stu values(null,ttt,m,5);
+insert into Stu values(1501060801,bbb,w,11);
+insert into Stu values(1501060805,ccc,m,12);
+insert into Stu values(1501060803,hhh,m,15);
+insert into Stu values(1501060807,eee,w,13);
+
+insert into Course values(1501060805,Database,80);
+insert into Course values(1501060803,Database,90);
+insert into Course values(1501060807,Database,95);
+insert into Course values(1501060808,Database,87);
+
+select * from Stu;
+select * from Course;
+
+select Sname from Stu;
+
+select Sname from Stu where Ssex=w;
+
+select * from Stu where Sage=15;
+
+//删除
+delete form Stu where Sname=aaa;
+delete from Stu where Sname=aaa;
+select * from Stu;
+
+//创建视图
+create view db_view as select Sname from Stu;
+help view db_view;
+create view Course_view as select Sname from Course;
+help view Course_view;
+
+//更新数据表
+update Stu st Sname=g where Sage=10;
+update from Stu set Sname=xiaohau where Sno=1501060801;
+
+update Stu set Sname=xiaohua where Sno=1501060801;
+update Stu set Ssex=w where Sno=1501060805;
+select * from Stu;
+
+//权限设置
+revoke insert on table Stu;
+insert into Stu values(1501020823,hhh,w,8);
+grante insert on table Stu;
+insert into Stu values(1501020823,kkk,m,8);
+select * from Stu;
+
+revoke delete on table Stu;
+delete from Stu where Sname=aaa;
+grante delete on table Stu;
+delete from Stu where Sno=1501020823;
+select * from Stu;
+
+revoke update on table Stu;
+update Stu set Sname=xiaohua where Sno=1501060801;
+grante update on table Stu;
+update Stu set Sname=xiaohua where Sno=1501060801;
+select * from Stu;
+
+//创建索引
+create index db_1_index on Stu(Sno);
+show index db_1_index;
+create index db_2_index on Course(Cno);
+show index db_2_index;
+
+//help 
+help db;

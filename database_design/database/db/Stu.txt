@@ -1,0 +1,8 @@
+Q Sno int not_null primary_key NULL NULL
+Q Sname varchar(20) NO NO NULL NULL
+Q Ssex char NO NO NULL NULL
+Q Sage int NO NO NULL NULL
+P 1501060801 xiaohua w 11
+P 1501060805 ccc m 12
+P 1501060803 hhh m 15
+P 1501060807 eee w 13

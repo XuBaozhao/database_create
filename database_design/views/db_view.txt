@@ -1,0 +1,1 @@
+create view db_view as select Sname from Stu; 

@@ -1,0 +1,2 @@
+db_1_index Stu
+db_2_index Course

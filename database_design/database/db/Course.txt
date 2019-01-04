@@ -1,0 +1,8 @@
+Q Cno int NO NO NULL NULL 
+Q Cname varchar(20) NO NO NULL NULL 
+Q Cgrade int NO NO NULL NULL 
+P 1501060801 Database 100 
+P 1501060805 Database 80
+P 1501060803 Database 90
+P 1501060807 Database 95
+P 1501060808 Database 87
